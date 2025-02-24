@@ -25,8 +25,8 @@ hydra = ["tungstenite", "tokio-tungstenite", "futures-util", "bytes"]
 [dependencies]
 pallas = { version = "0.32.0", features = ["hardano"] }
 
-gasket = { git = "https://github.com/construkts/gasket-rs.git", features = ["derive"] }
-gasket-prometheus = { git = "https://github.com/construkts/gasket-rs.git" }
+gasket = { git = "https://github.com/jpg-store/gasket-rs.git", features = ["derive"], branch="martin/fix-gauge-0.7.0" }
+gasket-prometheus = { git = "https://github.com/jpg-store/gasket-rs.git", branch="martin/fix-gauge-0.7.0"  }
 # gasket = { path = "../../construkts/gasket-rs/gasket", features = ["derive"] }
 # gasket = { git = "https://github.com/construkts/gasket-rs.git", features = ["derive"] }
 

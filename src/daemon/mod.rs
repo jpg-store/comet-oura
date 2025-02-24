@@ -90,7 +90,7 @@ fn connect_stages<S: Sink>(
     tethers.push(sink.spawn(policy.clone()));
     tethers.push(cursor.spawn(policy));
 
-    let runtime = Daemon::new(tethers);
+    let runtime = Daemon(tethers);
 
     Ok(runtime)
 }
