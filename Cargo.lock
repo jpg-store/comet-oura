@@ -2714,24 +2714,22 @@ dependencies = [
 
 [[package]]
 name = "gasket"
-version = "0.9.0"
-source = "git+https://github.com/construkts/gasket-rs.git#c6f60b81c7213f536eeb62e4ad738ed0da328c17"
+version = "0.7.0"
+source = "git+https://github.com/jpg-store/gasket-rs.git?branch=martin%2Ffix-gauge-0.7.0#37a31f38e37ba102e26e233a25268d385fc714a5"
 dependencies = [
  "async-trait",
  "crossbeam",
  "gasket-derive",
  "serde",
- "signal-hook",
  "thiserror 1.0.69",
  "tokio",
- "tokio-util",
  "tracing",
 ]
 
 [[package]]
 name = "gasket-derive"
-version = "0.9.0"
-source = "git+https://github.com/construkts/gasket-rs.git#c6f60b81c7213f536eeb62e4ad738ed0da328c17"
+version = "0.7.0"
+source = "git+https://github.com/jpg-store/gasket-rs.git?branch=martin%2Ffix-gauge-0.7.0#37a31f38e37ba102e26e233a25268d385fc714a5"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2740,8 +2738,8 @@ dependencies = [
 
 [[package]]
 name = "gasket-prometheus"
-version = "0.9.0"
-source = "git+https://github.com/construkts/gasket-rs.git#c6f60b81c7213f536eeb62e4ad738ed0da328c17"
+version = "0.7.0"
+source = "git+https://github.com/jpg-store/gasket-rs.git?branch=martin%2Ffix-gauge-0.7.0#37a31f38e37ba102e26e233a25268d385fc714a5"
 dependencies = [
  "gasket",
  "prometheus_exporter_base",
