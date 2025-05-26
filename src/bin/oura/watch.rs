@@ -3,7 +3,8 @@ use oura::{
     daemon::{run_daemon, ConfigRoot},
     filters,
     framework::{ChainConfig, Error, IntersectConfig},
-    sinks, sources,
+    sinks::{self, DummySink},
+    sources,
 };
 use tracing::{info, Level};
 use tracing_subscriber::{fmt, layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};
@@ -35,7 +36,7 @@ pub fn run(args: &Args) -> Result<(), Error> {
         include_block_end_events: true,
         ..Default::default()
     });
-    let sink = sinks::Config::Terminal(sinks::terminal::Config {
+    let sink = sinks::Config::Terminal::<DummySink>(sinks::terminal::Config {
         throttle_min_span_millis: args.throttle,
         wrap: Some(args.wrap),
         adahandle_policy: Default::default(),

@@ -3,7 +3,8 @@ use oura::{
     daemon::{run_daemon, ConfigRoot},
     filters,
     framework::{ChainConfig, Error, IntersectConfig},
-    sinks, sources,
+    sinks::{self, DummySink},
+    sources,
 };
 use tracing::{info, Level};
 use tracing_subscriber::{fmt, layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};
@@ -37,7 +38,7 @@ pub fn run(args: &Args) -> Result<(), Error> {
     });
 
     let sink = match args.output.clone() {
-        Some(output) => sinks::Config::FileRotate(sinks::file_rotate::Config {
+        Some(output) => sinks::Config::FileRotate::<DummySink>(sinks::file_rotate::Config {
             output_path: Some(output),
             ..Default::default()
         }),
